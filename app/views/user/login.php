@@ -46,7 +46,7 @@
                                 <input type="password" class="form-control shadow-none" placeholder="password">
                             </div>
                             <div class="butt">LOGIN</div>
-                            <div class="belum-punya-akun">Belum punya akun? <a href="./register.html">Register</a></div>
+                            <div class="belum-punya-akun">Belum punya akun? <a href="<?= BASEURL ?>/register">Register</a></div>
                         </form>
                     </div>
                 </div>

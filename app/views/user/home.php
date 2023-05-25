@@ -20,7 +20,7 @@
     <header class="fixed-top">
         <nav class=" navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">All.CO</a>
+                <a class="navbar-brand" href="<?= BASEURL; ?>">All.CO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -29,17 +29,17 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="room.html">Room</a>
+                            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Room">Room</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#testimoni">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <a class="login-button" href="login.html">
+                <a class="login-button" href="<?= BASEURL ?>/login">
                     Login
                 </a>
             </div>
@@ -49,7 +49,7 @@
     <div class="all-contents">
         <!-- Jumbotron -->
         <div class="content">
-            <img src="../All.CO/images/jumbo.png">
+            <img src="<?= BASEURL ?>/images/jumbo.png">
             <div class="jumbotron">
                 <div class="Enjoy">Enjoy your Dream</div>
                 <div class="Vacation">Vacation</div>
@@ -82,9 +82,9 @@
                 <div class="col-sm-11">All.CO</div>
                 <div class="col-sm-1">
                     <div class="row d-flex justify-content-end">
-                        <div class="col-4"><img src="./images/facebook.png" alt=""></div>
-                        <div class="col-4"><img src="./images/instagram.png" alt=""></div>
-                        <div class="col-4"><img src="./images/twitter.png" alt=""></div>
+                        <div class="col-4"><img src="<?= BASEURL ?>/images/facebook.png" alt=""></div>
+                        <div class="col-4"><img src="<?= BASEURL ?>/images/instagram.png" alt=""></div>
+                        <div class="col-4"><img src="<?= BASEURL ?>/images/twitter.png" alt=""></div>
                     </div>
                 </div>
             </div>
