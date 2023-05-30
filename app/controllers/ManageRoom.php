@@ -2,7 +2,7 @@
 
 class ManageRoom extends Controller{
     public function index(){
-        $this->view('admin/manage-room');
+        $this->view('admin/manageroom');
     }
 }
 

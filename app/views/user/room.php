@@ -20,7 +20,7 @@
     <header class="fixed-top">
         <nav class=" navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">All.CO</a>
+                <a class="navbar-brand" href="<?= BASEURL; ?>">All.CO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -29,17 +29,17 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="room.html">Room</a>
+                            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/Room">Room</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#testimoni">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <a class="login-button" href="login.html">
+                <a class="login-button" href="<?= BASEURL ?>/login">
                     Login
                 </a>
             </div>

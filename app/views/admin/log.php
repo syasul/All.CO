@@ -28,16 +28,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="manage-room.html">Manage Room</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageroom">Manage Room</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="manage-customer.html">Manage Customer</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/managecustomer">Manage Customer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="manage-order.html">Manage Order</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageorder">Manage Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="log-data.html">Log Data</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/log">Log Data</a>
                     </li>
 
                 </ul>
