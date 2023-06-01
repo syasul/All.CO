@@ -35,18 +35,18 @@
                 <div class="register-out-side">
                     <div class="register-in-side">
                         <div class="title-register">Register.</div>
-                        <form>
+                        <form action="<?= BASEURL ?>/register/register" method="post">
                             <div class="mb-3">
                                 <!-- mb adalah singkatan dari margin bottom dan 3 adalah value dari margin tersebut -->
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
                                 <!-- type adalah tipe inputan dari textfield -->
-                                <input type="text" class="form-control shadow-none" placeholder="username">
+                                <input type="text" class="form-control shadow-none" placeholder="username" name="username">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputpassword1" class="form-label">password</label>
-                                <input type="password" class="form-control shadow-none" placeholder="password">
+                                <input type="password" class="form-control shadow-none" placeholder="password" name="password">
                             </div>
-                            <div class="butt">REGISTER</div>
+                            <button class="butt" type="submit">Register</button>
                         </form>
                     </div>
                 </div>
