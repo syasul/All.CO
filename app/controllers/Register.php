@@ -8,7 +8,7 @@ class Register extends Controller{
 
     public function register(){
         if ($this->model('User_Model')->register($_POST) > 0) {
-            header('Location'. BASEURL . '/home');
+            header('Location:'. BASEURL . '/Home');
             exit;
         }
     }
