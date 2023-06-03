@@ -35,7 +35,7 @@
                 <div class="register-out-side">
                     <div class="register-in-side">
                         <div class="title-register">Register.</div>
-                        <form action="<?= BASEURL ?>/register/register" method="post">
+                        <form action="<?= BASEURL ?>/register/register" method="POST">
                             <div class="mb-3">
                                 <!-- mb adalah singkatan dari margin bottom dan 3 adalah value dari margin tersebut -->
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
@@ -46,7 +46,7 @@
                                 <label for="exampleInputpassword1" class="form-label">password</label>
                                 <input type="password" class="form-control shadow-none" placeholder="password" name="password">
                             </div>
-                            <button class="butt" type="submit">Register</button>
+                            <button class="butt" type="submit">REGISTER</button>
                         </form>
                     </div>
                 </div>

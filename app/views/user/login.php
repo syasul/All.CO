@@ -34,18 +34,16 @@
                 <div class="login-out-side">
                     <div class="login-in-side">
                         <div class="title-login">Login.</div>
-                        <form>
+                        <form action="<?= BASEURL ?>/login/login" method="POST">
                             <div class="mb-3">
-                                <!-- mb adalah singkatan dari margin bottom dan 3 adalah value dari margin tersebut -->
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                                <!-- type adalah tipe inputan dari textfield -->
-                                <input type="text" class="form-control shadow-none" placeholder="username">
+                                <input type="text" class="form-control shadow-none" placeholder="username" name="username">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputpassword1" class="form-label">password</label>
-                                <input type="password" class="form-control shadow-none" placeholder="password">
+                                <input type="password" class="form-control shadow-none" placeholder="password" name="password">
                             </div>
-                            <div class="butt">LOGIN</div>
+                            <button class="butt" type="submit">LOGIN</button>
                             <div class="belum-punya-akun">Belum punya akun? <a href="<?= BASEURL ?>/register">Register</a></div>
                         </form>
                     </div>
