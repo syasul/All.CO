@@ -11,7 +11,7 @@ class User_Model{
     }
 
     public function register($data){
-        try {
+
             $query = "INSERT INTO tb_user VALUES ('', :username, :password, 'customer')";
         
 
@@ -22,18 +22,14 @@ class User_Model{
             $this->db->execute();
 
             return $this->db->rowCount();
-        } catch (PDOException $e) {
-            echo "Error: ". $e->getMessage();
-            return false;
-        }
     }
 
-    public function login($username){
+    public function login($data){
         try {
             $query = "SELECT * FROM tb_user WHERE username = :username";
 
             $this->db->query($query);
-            $this->db->bind(':username', $username);
+            $this->db->bind(':username', $data['username']);
             $user = $this->db->single();
 
             return $user;
@@ -42,7 +38,7 @@ class User_Model{
         }
     }
 
-    public function validateLoginForm($username, $password) {
+    public function validateForm($username, $password) {
         $errors = [];
     
         // Validasi username

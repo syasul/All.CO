@@ -11,8 +11,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
-    <link rel="stylesheet" href="CSS/manage-room.css">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/manage-room.css">
+    <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/images/favicon.ico">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
                 </ul>
             </div>
-            <a class="login-button" href="login.html">
+            <a class="login-button" href="<?= BASEURL; ?>/login/logout">
                 <img src="./images/logout.png" alt="" srcset="">
             </a>
         </div>

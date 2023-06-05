@@ -9,29 +9,30 @@ class Login extends Controller{
     public function login(){
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-                echo "Error : if 1";
-        
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $errors = $this->model('User_Model')->validateLoginForm($username, $password);
+                $errors = $this->model('User_Model')->validateForm($username, $password);
 
                 if (empty($errors)) {
 
                     echo "Error : if 2";
-                    $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-                    // Cek kecocokan username dan password
-                    $user = $this->model('User_Model')->login($username);
+                    // $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                    var_dump($user);
+                    $data = [
+                      'username' => $username,
+                      'password' => password_hash($password, PASSWORD_DEFAULT)
+                    ];
+
+                    // Cek kecocokan username dan password
+                    $user = $this->model('User_Model')->login($data);
             
-                    if ($user && password_verify($password, $hashPassword)) {
+                    if ($user && password_verify($password, $data['password'])) {
 
                         echo "Error : if 3";
 
                       // Login berhasil, simpan informasi pengguna ke sesi atau cookie
-                      $_SESSION['user'] = $user;
+                      $_SESSION['id_user'] = $user;
             
                       if ($user['role'] === 'customer') {
                         header('Location:'. BASEURL . '/Home');
@@ -51,6 +52,17 @@ class Login extends Controller{
                   // Tampilkan tampilan formulir login
                 //   include 'login.php';
             }
+    }
+
+    public function logout() {
+      // Hapus informasi pengguna dari sesi atau cookie
+      session_unset();
+      session_destroy();
+      // atau unset($_SESSION['user']);
+  
+      // Alihkan ke halaman login
+      header("Location:". BASEURL . '/login');
+      exit;
     }
 }
 
