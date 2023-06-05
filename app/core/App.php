@@ -10,7 +10,7 @@ class App {
         $url = $this->parseURL();
         
         // controller
-        if (isset($url[0])){
+        if (isset($url[0])){ //kalau ditambahkan ini akan muncul error Notice: Trying to access array offset on value of type null 
 
             if (file_exists('../app/controllers/' . $url[0] . '.php')){
                 $this->controller = $url[0];
@@ -23,7 +23,7 @@ class App {
         $this->controller = new $this->controller;
 
         // method
-        if (isset($url[1])) 
+        if (isset($url[1])) //kalau ditambahkan ini akan muncul error Notice: Trying to access array offset on value of type null
 		{
 			
 			if (method_exists($this->controller, $url[1])){

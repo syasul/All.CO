@@ -40,9 +40,9 @@
                         
                     </ul>
                 </div>
-                <a class="login-button" href="<?= BASEURL ?>/login">
+                {% comment %} <a class="login-button" href="<?= BASEURL ?>/login">
                     Login
-                </a>
+                </a> {% endcomment %}
             </div>
         </nav>
     </header>

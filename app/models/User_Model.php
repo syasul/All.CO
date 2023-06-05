@@ -16,8 +16,8 @@ class User_Model{
         
 
             $this->db->query($query);
-            $this->db->bind('username', $data['username']);
-            $this->db->bind('password', $data['password']);
+            $this->db->bind(':username', $data['username']);
+            $this->db->bind(':password', $data['password']);
 
             $this->db->execute();
 
@@ -28,30 +28,35 @@ class User_Model{
         }
     }
 
-    public function login($data){
-        try{
+    public function login($username){
+        try {
             $query = "SELECT * FROM tb_user WHERE username = :username";
 
             $this->db->query($query);
-            $this->db->bind('username', $data['username']);
-
-            $this->db->execute();
-
+            $this->db->bind(':username', $username);
             $user = $this->db->single();
 
-            if ($user) {
-                if (password_verify('password', $data['password'])) {
-                    return $user;
-                }
-            }
-
-            return false;   //jika gagal login
-
+            return $user;
         } catch (PDOException $e) {
-            echo "Error: ". $e->getMessage();
-            return false;
+            echo "Error: " . $e->getMessage();
         }
     }
+
+    public function validateLoginForm($username, $password) {
+        $errors = [];
+    
+        // Validasi username
+        if (empty($username)) {
+          $errors[] = "Username tidak boleh kosong.";
+        }
+    
+        // Validasi password
+        if (empty($password)) {
+          $errors[] = "Password tidak boleh kosong.";
+        }
+    
+        return $errors;
+      }
 }
 
 ?>
