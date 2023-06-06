@@ -32,6 +32,9 @@ class Login extends Controller{
                         echo "Error : if 3";
 
                       // Login berhasil, simpan informasi pengguna ke sesi atau cookie
+                      
+                      session_start();
+
                       $_SESSION['id_user'] = $user;
             
                       if ($user['role'] === 'customer') {

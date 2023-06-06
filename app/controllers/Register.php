@@ -27,6 +27,8 @@ class Register extends Controller{
 
                 $user = $this->model('User_Model')->login($data);
 
+                session_start();
+                
                 $_SESSION['id_user'] = $user;
                 if ($user['role'] === 'customer') {
                     header('Location:'. BASEURL . '/Home');

@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <a class="login-button" href="<?= BASEURL; ?>/login/logout">
-                <img src="./images/logout.png" alt="" srcset="">
+                <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="">
             </a>
         </div>
     </nav>

@@ -2,7 +2,12 @@
 
 class ManageRoom extends Controller{
     public function index(){
-        $this->view('admin/manageroom');
+        session_start();
+        if (isset($_SESSION['id_user'])) {
+            $this->view('admin/manageRoom');
+        } else {
+            $this->view('user/login');
+       }
     }
 }
 

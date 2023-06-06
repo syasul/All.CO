@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
-    
+
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
 
@@ -37,12 +37,12 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#testimoni">Contact</a>
                         </li>
-                        
+
                     </ul>
                 </div>
-                {% comment %} <a class="login-button" href="<?= BASEURL ?>/login">
-                    Login
-                </a> {% endcomment %}
+                <a class="logout-button" href="<?= BASEURL ?>/login/logout" style="padding: 0.29% 1.8% 0.33% 1.8%">
+                    <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="" width="23px" height="23px">
+                </a>
             </div>
         </nav>
     </header>

@@ -2,7 +2,12 @@
 
 class ManageOrder extends Controller{
     public function index(){
-        $this->view('admin/manageOrder');
+        session_start();
+        if (isset($_SESSION['id_user'])) {
+            $this->view('admin/manageOrder');
+        } else {
+            $this->view('user/login');
+       }
     }
 }
 
