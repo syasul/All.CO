@@ -3,10 +3,13 @@
 class ManageRoom extends Controller{
     public function index(){
         session_start();
-        if (isset($_SESSION['id_user'])) {
-            $this->view('admin/manageRoom');
+        if (!isset($_SESSION['id_user'])) {
+            
+            header('Location'. BASEURL .'/login');
+            
         } else {
-            $this->view('user/login');
+           $this->view('admin/manageroom');
+            
        }
     }
 }

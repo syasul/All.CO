@@ -3,10 +3,10 @@
 class ManageOrder extends Controller{
     public function index(){
         session_start();
-        if (isset($_SESSION['id_user'])) {
+        if (!isset($_SESSION['id_user'])) {
             $this->view('admin/manageOrder');
         } else {
-            $this->view('user/login');
+            header('Location:' . BASEURL . '/login');
        }
     }
 }

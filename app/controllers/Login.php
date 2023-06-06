@@ -58,13 +58,10 @@ class Login extends Controller{
     }
 
     public function logout() {
-      // Hapus informasi pengguna dari sesi atau cookie
       session_unset();
       session_destroy();
-      // atau unset($_SESSION['user']);
-  
-      // Alihkan ke halaman login
-      header("Location:". BASEURL . '/login');
+
+      header("Location:". BASEURL . '/Home');
       exit;
     }
 }
