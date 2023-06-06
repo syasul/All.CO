@@ -11,7 +11,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
-    <link rel="stylesheet" href="<?= BASEURL; ?>/css/manage-customer.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/manage-user.css">
     <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/images/favicon.ico">
 </head>
 
@@ -28,16 +28,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageroom">Manage Room</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageroom">Manage Room</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/managecustomer">Manage Customer</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageuser">Manage User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageorder">Manage Order</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageorder">Manage Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/log">Log Data</a>
+                        <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/log">Log Data</a>
                     </li>
 
                 </ul>
@@ -112,30 +112,30 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="<?= BASEURL; ?>/ManageUser/addUser" method="POST">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="recipient-name"
-                                placeholder="username">
+                                placeholder="username" name="username">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Password</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name">
+                            <input type="text" class="form-control shadow-none" id="recipient-name" name="password">
                         </div>
 
                         <div class="mb-3">
                             <label for="role" class="col-form-label">Role</label>
                             <select class="form-select shadow-none  " id="inputimage"
-                                aria-label="Default select example" name="status">
-                                <option value="Available">Customer</option>
-                                <option value="Not Available">Admin</option>
+                                aria-label="Default select example" name="role">
+                                <option value="customer">Customer</option>
+                                <option value="admin">Admin</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn shadow-none btn-success">Create</button>
+                    <button type="submit" class="btn shadow-none btn-success">Create</button>
                 </div>
             </div>
         </div>
