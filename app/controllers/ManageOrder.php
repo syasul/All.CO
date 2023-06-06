@@ -4,9 +4,14 @@ class ManageOrder extends Controller{
     public function index(){
         session_start();
         if (!isset($_SESSION['id_user'])) {
-            $this->view('admin/manageOrder');
+            // header('Location'. BASEURL .'/');
+            header('Location:'. BASEURL .'/');
+            
         } else {
-            header('Location:' . BASEURL . '/login');
+            // header('Location:' . BASEURL . '/manageroom');
+            
+           $this->view('admin/manageOrder');
+            
        }
     }
 }

@@ -27,6 +27,17 @@ class Room extends Controller{
             $this->view('templates/footer');
        }
     }
+
+
+    // public function permissionBook(){
+    //     session_start();
+    //     if (isset($_SESSION['id_user'])) {
+    //         echo 'permission Ok';
+    //     } else {
+    //        header('Location:' . BASEURL .'/login');
+            
+    //    }
+    // }
 }
 
 

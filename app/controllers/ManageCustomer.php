@@ -3,10 +3,12 @@
 class ManageCustomer extends Controller{
     public function index(){
         session_start();
-        if (isset($_SESSION['id_user'])) {
-            $this->view('admin/manageCustomer');
+        if (!isset($_SESSION['id_user'])) {
+            header('Location:'. BASEURL .'/');
+            
         } else {
-            $this->view('user/login');
+           $this->view('admin/manageCustomer');
+            
        }
     }
 }

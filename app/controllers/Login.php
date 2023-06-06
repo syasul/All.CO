@@ -60,8 +60,10 @@ class Login extends Controller{
     public function logout() {
       session_unset();
       session_destroy();
-
-      header("Location:". BASEURL . '/Home');
+      session_write_close();
+      setcookie(session_name(),'',0,'/');
+      session_regenerate_id(true);
+      header("Location:". BASEURL . '/');
       exit;
     }
 }
