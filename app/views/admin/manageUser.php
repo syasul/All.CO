@@ -112,7 +112,7 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= BASEURL; ?>/ManageUser/addUser" method="POST">
+                    <form action="<?= BASEURL; ?>/manageuser/addUser" method="POST">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="recipient-name"
@@ -120,7 +120,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Password</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name" name="password">
+                            <input type="text" class="form-control shadow-none" id="recipient-name" placeholder="password" name="password">
                         </div>
 
                         <div class="mb-3">
@@ -131,12 +131,13 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn shadow-none btn-success">Create</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn shadow-none btn-success">Create</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -154,19 +155,19 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Usermame</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name"
+                            <label for="username" class="col-form-label">Usermame</label>
+                            <input type="text" class="form-control shadow-none" id="username"
                                 placeholder="username">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Password</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name"
+                            <label for="password" class="col-form-label">Password</label>
+                            <input type="text" class="form-control shadow-none" id="password"
                                 placeholder="password">
                         </div>
 
                         <div class="mb-3">
                             <label for="role" class="col-form-label">Role</label>
-                            <select class="form-select shadow-none  " id="inputimage"
+                            <select class="form-select shadow-none  " id="role"
                                 aria-label="Default select example" name="status">
                                 <option value="Available">Customer</option>
                                 <option value="Not Available">Admin</option>
@@ -176,7 +177,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn shadow-none btn-warning">Update</button>
+                    <button type="submit" class="btn shadow-none btn-warning">Update</button>
                 </div>
             </div>
         </div>

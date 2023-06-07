@@ -1,5 +1,8 @@
 <?php 
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 class ManageUser extends Controller{
     public function index(){
         session_start();
@@ -11,9 +14,10 @@ class ManageUser extends Controller{
        }
     }
 
-    public function adUser()
+    public function addUser()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $role = $_POST['role'];
@@ -21,14 +25,17 @@ class ManageUser extends Controller{
 
             // if (isset($_POST["role"])) {
             //     $selectedRole = $_POST['role'];
+            $data = [
+                'username' => $username,
+                'password' => $password,
+                'role' => $role
+            ];
 
-                $data = [
-                    'username' => $username,
-                    'password' => $password,
-                    'role' => $role
-                ];
+                
 
-                $this->model('User_Model')->addDataUser($data);
+            $this->model('User_Model')->addDataUser($data);
+            
+            header('Location:'. BASEURL .'/manageuser');
 
             // }
 
