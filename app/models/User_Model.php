@@ -56,6 +56,11 @@ class User_Model{
         return $errors;
       }
 
+      public function getAllUser  ()
+      {
+        $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
+      }
 
       public function addDataUser($data)
       {

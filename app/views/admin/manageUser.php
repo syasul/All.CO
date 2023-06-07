@@ -61,26 +61,29 @@
                         <th scope="col" class="text-center">No</th>
 
                         <th scope="col" class="text-center">Username</th>
-                        <th scope="col" class="text-center">Password</th>
+                        
                         <th scope="col" class="text-center">Role</th>
                         <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($data['user'] as $user  ) : ?>
                     <tr>
-                        <th scope="row" class="text-center">1</th>
-                        <td class="text-center">Mark</td>
-                        <td class="text-center">Otto</td>
-                        <td class="text-center">@mdo</td>
-                        <td class="text-center"><button type="button" class="btn shadow-none btn-warning"
+                        <th scope="row" class="text-center"><?= $user['id_user'] ?></th>
+                        <td class="text-center"><?= $user['username'] ?></td>
+                        
+                        <td class="text-center"><?= $user['role'] ?></td>
+                        <td class="text-center">
+                            <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $data['id_user'] ?>" class="btn shadow-none btn-warning"
                                 data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><img class="modal-icon"
-                                    src="./images/edit.png" alt="" srcset=""></button>
-                            <button type="button" class="btn shadow-none btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="./images/trash.png"
-                                    alt="" srcset=""></button>
+                                    src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
+                            <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $data['id_user'] ?>" class="btn shadow-none btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
+                                    alt="" srcset="">
+                    </a>
                         </td>
                     </tr>
-
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -113,6 +116,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="<?= BASEURL; ?>/manageuser/addUser" method="POST">
+                    <!-- <input type="hidden" name="id" id="id"> -->
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="recipient-name"

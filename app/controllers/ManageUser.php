@@ -10,7 +10,8 @@ class ManageUser extends Controller{
             header('Location:'. BASEURL .'/');
             
         } else {
-           $this->view('admin/manageUser');
+           $data['user'] = $this->model('User_Model')->getAllUser();
+           $this->view('admin/manageUser', $data);
        }
     }
 

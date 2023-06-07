@@ -1,4 +1,5 @@
-<!-- footer -->
+
+    <!-- footer -->
     <footer>
         <div class="foot">
             <div class="row">
