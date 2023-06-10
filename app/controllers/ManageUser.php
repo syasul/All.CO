@@ -1,8 +1,5 @@
 <?php 
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 class ManageUser extends Controller{
     public function index(){
         session_start();
@@ -23,14 +20,25 @@ class ManageUser extends Controller{
             $password = $_POST['password'];
             $role = $_POST['role'];
 
-
-            // if (isset($_POST["role"])) {
-            //     $selectedRole = $_POST['role'];
             $data = [
                 'username' => $username,
                 'password' => $password,
                 'role' => $role
             ];
+
+            // log
+                session_start();
+                $_SESSION['username'];
+                echo($_SESSION["username"]);die;
+
+
+                $log = [
+                    'date_log' => date("Y-m-d H:i:s"),
+                    'log_data' => $username ." menambahkan data " . "{" . $username . ", " . $password .", " . $role . ", }" 
+                ];
+    
+                $this->model('Log_Model')->log($log);
+            
 
                 
 
@@ -40,6 +48,24 @@ class ManageUser extends Controller{
 
             // }
 
+        }
+           
+    }
+
+    public function updateUser($id_user)
+    {
+        # code...
+    }
+
+    public function deleteUser($id_user)
+    {
+        if ($this->model('User_Model')->hapusDataUser($id_user) > 0) {
+            
+            header('Location:'. BASEURL .'/manageuser');
+            exit;   
+        } else {
+            header('Location:'. BASEURL .'/manageuser');
+            exit;
         }
     }
 }

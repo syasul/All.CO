@@ -5,7 +5,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins';
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 /* navbar */
@@ -62,6 +65,7 @@ body {
 }
 
 .content {
+    flex: 1;
     overflow: hidden;
     padding: 2% 4% 2% 4%;
 }
@@ -104,8 +108,13 @@ body {
 }
 
 /* footer */
+footer {
+    flex-shrink: 0;
+}
+
+
 .foot {
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
     overflow: hidden;

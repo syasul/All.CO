@@ -76,6 +76,27 @@ class User_Model{
 
         return $this->db->rowCount();
       }
+
+      public function hapusDataUser($id_user)
+      {
+          $query = "DELETE FROM tb_user WHERE id_user = :id_user";
+          
+          $this->db->query($query);
+          $this->db->bind('id_user', $id_user);
+  
+          $this->db->execute();
+  
+          return $this->db->rowCount();
+      }
+
+      public function jumlahUser(){
+        $query = "SELECT COUNT(*) AS total_count FROM tb_user;";
+        $this->db->query($query);
+  
+          $this->db->execute();
+  
+          return $this->db->single();
+      }
 }
 
 ?>

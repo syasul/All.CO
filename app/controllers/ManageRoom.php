@@ -6,7 +6,8 @@ class ManageRoom extends Controller{
         if (!isset($_SESSION['id_user'])) {
             header('Location:'. BASEURL .'/');
         } else {
-           $this->view('admin/manageRoom');
+            $data['countUser'] = $this->model('User_Model')->jumlahUser();
+            $this->view('admin/manageRoom', $data);
             
        }
     }

@@ -69,7 +69,8 @@
                         <div class="text">Total Customer</div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="jumlah">0</div>
+                        <div class="jumlah"><?= $data['countUser']['total_count'] ?></div>
+                        
                     </div>
                 </div>
 

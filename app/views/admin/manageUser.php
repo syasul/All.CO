@@ -11,12 +11,13 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
-    <link rel="stylesheet" href="<?= BASEURL; ?>/css/manage-user.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/manageuser.css">
     <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/images/favicon.ico">
 </head>
 
 <body>
     <!-- navbar -->
+    <header>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">All.CO</a>
@@ -47,6 +48,7 @@
             </a>
         </div>
     </nav>
+    </header>
 
     <div class="content">
         <div class="d-flex justify-content-end">
@@ -67,22 +69,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($data['user'] as $user  ) : ?>
-                    <tr>
-                        <th scope="row" class="text-center"><?= $user['id_user'] ?></th>
-                        <td class="text-center"><?= $user['username'] ?></td>
-                        
-                        <td class="text-center"><?= $user['role'] ?></td>
-                        <td class="text-center">
-                            <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $data['id_user'] ?>" class="btn shadow-none btn-warning"
-                                data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><img class="modal-icon"
-                                    src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
-                            <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $data['id_user'] ?>" class="btn shadow-none btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
-                                    alt="" srcset="">
-                    </a>
-                        </td>
-                    </tr>
+                    <?php foreach($data['user'] as $index => $user  ) : ?>
+                            <tr>
+                                    <th scope="row" class="text-center"><?= $index+1 ?></th>
+                                <td class="text-center"><?= $user['username'] ?></td>
+                                
+                                <td class="text-center"><?= $user['role'] ?></td>
+                                <td class="text-center">
+                                    <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><img class="modal-icon"
+                                            src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
+                                    <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $user['id_user']; ?>" class="btn shadow-none btn-danger" 
+                                        data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
+                                            alt="" srcset=""></a>
+                                </td>
+                            </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -92,19 +93,20 @@
 
 
     <!-- footer -->
-    <div class="foot">
-        <div class="row">
-            <div class="col-sm-11">All.CO</div>
-            <div class="col-sm-1">
-                <div class="row d-flex justify-content-end">
-                    <div class="col-4"><img src="./images/facebook.png" alt=""></div>
-                    <div class="col-4"><img src="./images/instagram.png" alt=""></div>
-                    <div class="col-4"><img src="./images/twitter.png" alt=""></div>
+    <footer>
+        <div class="foot">
+            <div class="row">
+                <div class="col-sm-11">All.CO</div>
+                <div class="col-sm-1">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-4"><img src="./images/facebook.png" alt=""></div>
+                        <div class="col-4"><img src="./images/instagram.png" alt=""></div>
+                        <div class="col-4"><img src="./images/twitter.png" alt=""></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </footer>
     <!-- modal add -->
     <div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -116,7 +118,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="<?= BASEURL; ?>/manageuser/addUser" method="POST">
-                    <!-- <input type="hidden" name="id" id="id"> -->
+                    <input type="hidden" name="id_user" id="id_user">
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="recipient-name"
