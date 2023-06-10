@@ -7,7 +7,8 @@ class Log extends Controller{
             header('Location:'. BASEURL .'/');
             
         } else {
-           $this->view('admin/Log');
+            $data['log'] = $this->model('Log_Model')->getAllLog();
+            $this->view('admin/Log', $data);
             
        }
     }

@@ -28,16 +28,15 @@ class ManageUser extends Controller{
 
             // log
                 session_start();
-                $_SESSION['username'];
-                echo($_SESSION["username"]);die;
+                $admin = $_SESSION['id_user']["username"];
 
 
                 $log = [
                     'date_log' => date("Y-m-d H:i:s"),
-                    'log_data' => $username ." menambahkan data " . "{" . $username . ", " . $password .", " . $role . ", }" 
+                    'log_data' => $admin ." menambahkan data " . "{" . $username . ", " . $password .", " . $role . "}" 
                 ];
     
-                $this->model('Log_Model')->log($log);
+                $this->model('Log_Model')->addLog($log);
             
 
                 

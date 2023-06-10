@@ -12,7 +12,14 @@ class Log_Model{
         $this->db = new Database;
     }
 
-    public function log($log){
+    public function getAllLog() {
+        $this->db->query("SELECT * FROM ". $this->table . " ORDER BY id_log DESC");
+
+        return $this->db->resultSet();
+        
+    }
+
+    public function addLog($log){
 
             $query = "INSERT INTO tb_log VALUES ('', :date_log, :log_data)";
         

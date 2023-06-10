@@ -62,11 +62,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($data['log'] as $log  ) : ?>
                     <tr>
-                        <th scope="row" class="text-center">1</th>
-                        <td class="text-center">Mark</td>
+                        <th scope="row" class="text-center"><?= $log['date_log']; ?></th>
+                        <td class="text-center"><?= $log['log_data']; ?></td>
                     </tr>
-
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
