@@ -77,7 +77,7 @@
                                 <td class="text-center"><?= $user['role'] ?></td>
                                 <td class="text-center">
                                     <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning showModalUpdate"
-                                        data-bs-toggle="modal" data-bs-target="#ModalUpdate"><img class="modal-icon"
+                                        data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $user['id_user']; ?>" onclick="detail(<?= $user['id_user']; ?>,'<?= $user['username']; ?>','<?= $user['password']; ?>','<?= $user['role']; ?>')"><img class="modal-icon"
                                             src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
                                     <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $user['id_user']; ?>" class="btn shadow-none btn-danger" 
                                         data-bs-target="#exampleModalDelete" > <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
@@ -149,7 +149,6 @@
     </div>
 
     <!-- modal update -->
-    <?php foreach($data['user'] as $user  ) : ?>
     <div class="modal fade" id="ModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -176,20 +175,19 @@
                         <div class="mb-3">
                             <label for="role" class="col-form-label">Role</label>
                             <select class="form-select shadow-none  " id="role"
-                                aria-label="Default select example" name="status">
-                                <option value="Available">Customer</option>
-                                <option value="Not Available">Admin</option>
+                                aria-label="Default select example" name="role">
+                                <option id="customer1" value="customer">Customer</option>
+                                <option id="admin1" value="admin">Admin</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal" onclick="hapusselect('<?= $user['role']; ?>')">Close</button>
                     <button type="submit" class="btn shadow-none btn-warning">Update</button>
                 </div>
             </div>
         </div>
-        <?php endforeach;  ?>
 
 
         <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateUser.js"></script>
@@ -200,12 +198,27 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
+            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script src="exponential.js"></script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+    <script>
+    function detail(id,username,password,role){
+        document.getElementById("username").setAttribute("value", username); 
+        document.getElementById("password").setAttribute("value", password);
+        document.getElementById(role+"1").setAttribute("selected", "selected"); 
+    }
+    function hapusselect(role){
+        document.getElementById(role+"1").removeAttribute("selected", "selected"); 
+    }
+    </script>
 </body>
 
 </html>
