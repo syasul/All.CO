@@ -33,7 +33,7 @@ class ManageUser extends Controller{
 
                 $log = [
                     'date_log' => date("Y-m-d H:i:s"),
-                    'log_data' => $admin ." menambahkan data " . "{" . $username . ", " . $password .", " . $role . "}" 
+                    'log_data' => $admin ." menambahkan data user : " . "{" . $username . ", " . $password .", " . $role . "}" 
                 ];
     
                 $this->model('Log_Model')->addLog($log);
@@ -50,10 +50,42 @@ class ManageUser extends Controller{
         }
            
     }
-
-    public function updateUser($id_user)
+    public function getDataUpdate()
     {
-        # code...
+        echo json_encode($this->model('User_Model')->getDataUserById($_POST['id_user']));
+    }
+
+    public function updateUser()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $role = $_POST['role'];
+
+            $data = [
+                'username' => $username,
+                'password' => $password,
+                'role' => $role
+            ];
+
+            // log
+                session_start();
+                $admin = $_SESSION['id_user']["username"];
+
+
+                $log = [
+                    'date_log' => date("Y-m-d H:i:s"),
+                    'log_data' => $admin ." update data user : " . "{" . $username . ", " . $password .", " . $role . "}" 
+                ];
+    
+                $this->model('User_Model')->updateDataUser($data);
+            
+            header('Location:'. BASEURL .'/manageuser');
+
+            // }
+
+        }
+        
     }
 
     public function deleteUser($id_user)

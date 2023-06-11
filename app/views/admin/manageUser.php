@@ -52,7 +52,7 @@
 
     <div class="content">
         <div class="d-flex justify-content-end">
-            <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#exampleModalAdd"
+            <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#ModalAdd"
                 data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create User</button>
 
         </div>
@@ -76,11 +76,11 @@
                                 
                                 <td class="text-center"><?= $user['role'] ?></td>
                                 <td class="text-center">
-                                    <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModalUpdate"><img class="modal-icon"
+                                    <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning showModalUpdate"
+                                        data-bs-toggle="modal" data-bs-target="#ModalUpdate"><img class="modal-icon"
                                             src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
                                     <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $user['id_user']; ?>" class="btn shadow-none btn-danger" 
-                                        data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
+                                        data-bs-target="#exampleModalDelete" > <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png"
                                             alt="" srcset=""></a>
                                 </td>
                             </tr>
@@ -108,7 +108,7 @@
         </div>
     </footer>
     <!-- modal add -->
-    <div class="modal fade" id="exampleModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -118,7 +118,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="<?= BASEURL; ?>/manageuser/addUser" method="POST">
-                    <input type="hidden" name="id_user" id="id_user">
+                    
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="recipient-name"
@@ -149,7 +149,8 @@
     </div>
 
     <!-- modal update -->
-    <div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
+    
+    <div class="modal fade" id="ModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -159,7 +160,8 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="<?= BASEURL ?>/manageuser/updateUser" method="POST">
+                    <input type="hidden" name="id_user" id="id_user">
                         <div class="mb-3">
                             <label for="username" class="col-form-label">Usermame</label>
                             <input type="text" class="form-control shadow-none" id="username"
@@ -168,7 +170,7 @@
                         <div class="mb-3">
                             <label for="password" class="col-form-label">Password</label>
                             <input type="text" class="form-control shadow-none" id="password"
-                                placeholder="password">
+                                placeholder="password" disabled>
                         </div>
 
                         <div class="mb-3">
@@ -188,6 +190,8 @@
             </div>
         </div>
 
+
+        <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateUser.js"></script>
 
         <!-- Optional JavaScript; choose one of the two! -->
 
