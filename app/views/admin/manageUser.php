@@ -149,7 +149,7 @@
     </div>
 
     <!-- modal update -->
-    
+    <?php foreach($data['user'] as $user  ) : ?>
     <div class="modal fade" id="ModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -189,6 +189,7 @@
                 </div>
             </div>
         </div>
+        <?php end  ?>
 
 
         <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateUser.js"></script>
