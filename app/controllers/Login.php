@@ -15,10 +15,6 @@ class Login extends Controller{
                 $errors = $this->model('User_Model')->validateForm($username, $password);
 
                 if (empty($errors)) {
-
-                    echo "Error : if 2";
-                    // $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-
                     $data = [
                       'username' => $username,
                       'password' => password_hash($password, PASSWORD_DEFAULT)

@@ -189,7 +189,7 @@
                 </div>
             </div>
         </div>
-        <?php end  ?>
+        <?php endforeach;  ?>
 
 
         <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateUser.js"></script>
