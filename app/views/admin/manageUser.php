@@ -184,7 +184,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal" onclick="hapusselect('<?= $user['role']; ?>')">Close</button>
-                    <button type="submit" class="btn shadow-none btn-warning">Update</button>
+                    <button type="submit" class="btn shadow-none btn-warning" id="update">Update</button>
                 </div>
             </div>
         </div>
@@ -199,9 +199,7 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
             <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-            <script src="exponential.js"></script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
@@ -218,6 +216,21 @@
     function hapusselect(role){
         document.getElementById(role+"1").removeAttribute("selected", "selected"); 
     }
+    $('#update').click( function update(){
+       let username = document.getElementById("username").value;
+       let password = document.getElementById("password").value;
+       let role = document.getElementById("role").value;
+    $.ajax({
+            url: "<?= BASEURL; ?>/manageuser/updateUser",
+            data: { username:username,
+                    password:password,
+                    role:role},
+            method: 'POST',
+            success: function (data) {
+               console.log(data)
+            }
+        });
+    });
     </script>
 </body>
 

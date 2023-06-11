@@ -57,7 +57,6 @@ class ManageUser extends Controller{
 
     public function updateUser()
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $role = $_POST['role'];
@@ -67,6 +66,7 @@ class ManageUser extends Controller{
                 'password' => $password,
                 'role' => $role
             ];
+            //print_r($data);die;
 
             // log
                 session_start();
@@ -83,8 +83,6 @@ class ManageUser extends Controller{
             header('Location:'. BASEURL .'/manageuser');
 
             // }
-
-        }
         
     }
 
