@@ -78,29 +78,26 @@ class User_Model{
 
       public function getDataUserById($id_user)
       {
-          $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_user=:id_user');
-          $this->db->bind('id_user', $id_user);
-          return $this->db->single();
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id_user=:id_user');
+        $this->db->bind('id_user', $id_user);
+        return $this->db->single();
       }
 
       public function updateDataUser($data)
       {
-          $query = "UPDATE tb_user SET
-                      username = :username,
-                      password = :password,
-                      role = :role,
-                    WHERE id_user = :id_user";
-          
-          $this->db->query($query);
-          $this->db->bind('username', $data['username']);
-          $this->db->bind('password', $data['password']);
-          $this->db->bind('role', $data['role']);
-          $this->db->bind('id_user', $data['id_user']);
-  
-          $this->db->execute();
-  
-          return $this->db->rowCount();
+        $query = "UPDATE `tb_user` SET `username` = :username, `password` = :password, `role` = :role WHERE `id_user` = :id_user";
+
+        $this->db->query($query);
+        $this->db->bind(':username', $data['username']);
+        $this->db->bind(':password', $data['password']);
+        $this->db->bind(':role', $data['role']);
+        $this->db->bind(':id_user', $data['id_user']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
       }
+      
 
       public function hapusDataUser($id_user)
       {

@@ -57,30 +57,37 @@ class ManageUser extends Controller{
 
     public function updateUser()
     {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $role = $_POST['role'];
+        $id_user = $_POST['id_user'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $role = $_POST['role'];
 
-            $data = [
-                'username' => $username,
-                'password' => $password,
-                'role' => $role
-            ];
+        $data = [
+            'id_user' => $id_user,
+            'username' => $username,
+            'password' => $password,
+            'role' => $role
+        ];
+
+        $this->model('User_Model')->updateDataUser($data);
             //print_r($data);die;
 
             // log
-                session_start();
-                $admin = $_SESSION['id_user']["username"];
+        session_start();
+        $admin = $_SESSION['id_user']["username"];
 
 
-                $log = [
-                    'date_log' => date("Y-m-d H:i:s"),
-                    'log_data' => $admin ." update data user : " . "{" . $username . ", " . $password .", " . $role . "}" 
-                ];
+        $log = [
+            'date_log' => date("Y-m-d H:i:s"),
+            'log_data' => $admin ." update data user : " . "{" . $username . ", " . $password .", " . $role . "}" 
+        ];
+
+        $this->model('Log_Model')->addLog($log);
+
     
-                $this->model('User_Model')->updateDataUser($data);
+                
             
-            header('Location:'. BASEURL .'/manageuser');
+        header('Location:'. BASEURL .'/manageuser');
 
             // }
         
@@ -91,6 +98,16 @@ class ManageUser extends Controller{
         if ($this->model('User_Model')->hapusDataUser($id_user) > 0) {
             
             header('Location:'. BASEURL .'/manageuser');
+            session_start();
+            $admin = $_SESSION['id_user']["username"];
+
+
+            $log = [
+                'date_log' => date("Y-m-d H:i:s"),
+                'log_data' => $admin ." menghapus data user "
+            ];
+
+            $this->model('Log_Model')->addLog($log);
             exit;   
         } else {
             header('Location:'. BASEURL .'/manageuser');
