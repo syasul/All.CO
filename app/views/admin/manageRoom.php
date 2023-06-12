@@ -135,13 +135,13 @@
                                 <?= $room['description'] ?>
                             </td>
                             <td class="text-center">
-                                <?= $room['total_rooms'] ?>
+                                <?= $room['total_room'] ?>
                             </td>
                             <td class="text-center">
                                 <?= $room['price'] ?>
                             </td>
                             <td class="text-center">
-                                <a href="<?= BASEURL; ?>/manageroom/updateRoom/<?= $room['id_room'] ?>" class="btn shadow-none btn-warning showModalUpdate" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $user['id_room']; ?>" onclick="detail(<?= $user['id_room']; ?>,'<?= $user['username']; ?>','<?= $user['password']; ?>','<?= $user['role']; ?>')"><img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
+                                <a href="<?= BASEURL; ?>/manageroom/updateRoom/<?= $room['id_room'] ?>" class="btn shadow-none btn-warning showModalUpdate" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $room['id_room']; ?>" onclick="detail(<?= $room['id_room']; ?>,'<?= $room['name_room']; ?>','<?= $room['image']; ?>','<?= $room['description']; ?>','<?= $room['total_room']; ?>','<?= $room['price']; ?>')"><img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
                                 <a href="<?= BASEURL; ?>/manageroom/deleteRoom/<?= $room['id_room']; ?>" class="btn shadow-none btn-danger" data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png" alt="" srcset=""></a>
                             </td>
                         </tr>
@@ -219,33 +219,33 @@
                     <h5 class="modal-title" id="exampleModalLabel">Update Room</h5>
                     <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="<?= BASEURL ?>/manageuser/updateUser" method="POST" enctype="multipart/form-data">
+                <form action="<?= BASEURL ?>/manageroom/updateRoom" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                        <input type="hidden" name="id_user" id="id_user">
+                        <input type="hidden" name="id_room" id="id_room">
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Name Room</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name" placeholder="name of room" name="name_room">
+                            <label for="name_room" class="col-form-label">Name Room</label>
+                            <input type="text" class="form-control shadow-none" id="name_room" placeholder="name of room" name="name_room">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Image Room</label>
-                            <input type="file" class="form-control shadow-none" id="recipient-name" name="image">
+                            <label for="image" class="col-form-label">Image Room</label>
+                            <input type="file" class="form-control shadow-none" id="image" name="image">
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Description</label>
-                            <textarea class="form-control shadow-none" id="message-text" placeholder="description" name="description"></textarea>
+                            <label for="descript" class="col-form-label">Description</label>
+                            <textarea class="form-control shadow-none" id="descripti" placeholder="description" name="description"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Total Room</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name" placeholder="total" name="total_room">
+                            <label for="total_room" class="col-form-label">Total Room</label>
+                            <input type="text" class="form-control shadow-none" id="total_room" placeholder="total" name="total_room">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Price</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name" placeholder="price" name="price">
+                            <label for="price" class="col-form-label">Price</label>
+                            <input type="text" class="form-control shadow-none" id="price" placeholder="price" name="price">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn shadow-none btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn shadow-none btn-warning">Update</button>
+                            <button type="submit" class="btn shadow-none btn-warning" id="update">Update</button>
                         </div>
                     </div>
                 </form>
@@ -255,26 +255,29 @@
     </div>
 
     <script>
-        function detail(id, username, password, role) {
-            document.getElementById("id_room").setAttribute("value", id);
-            document.getElementById("username").setAttribute("value", username);
-            document.getElementById("password").setAttribute("value", password);
-            document.getElementById(role + "1").setAttribute("selected", "selected");
+        function detail(id_room, name_room, image, description, total_room, price) {
+            document.getElementById("id_room").setAttribute("value", id_room);
+            document.getElementById("name_room").setAttribute("value", name_room);
+            document.getElementById("image").setAttribute("value", image);
+            document.getElementById("description").setAttribute("value", description);
+            document.getElementById("total_room").setAttribute("value", total_room);
+            document.getElementById("price").setAttribute("value", price);
         }
 
-        function hapusselect(role) {
-            document.getElementById(role + "1").removeAttribute("selected", "selected");
-        }
         $('#update').click(function update() {
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-            let role = document.getElementById("role").value;
+            let name_room = document.getElementById("name_room").value;
+            let image = document.getElementById("image").value;
+            let description = document.getElementById("description").value;
+            let total_room = document.getElementById("total_room").value;
+            let price = document.getElementById("price").value;
             $.ajax({
-                url: "<?= BASEURL; ?>/manageuser/updateUser",
+                url: "<?= BASEURL; ?>/manageroom/updateRoom",
                 data: {
-                    username: username,
-                    password: password,
-                    role: role
+                    name_room: name_room,
+                    image: image,
+                    description: description,
+                    total_room: total_room,
+                    price: price
                 },
                 method: 'POST',
                 success: function(data) {
