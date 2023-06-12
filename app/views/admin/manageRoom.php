@@ -141,7 +141,7 @@
                                 <?= $room['price'] ?>
                             </td>
                             <td class="text-center">
-                                <a href="<?= BASEURL; ?>/manageroom/updateRoom/<?= $room['id_room'] ?>" class="btn shadow-none btn-warning showModalUpdate" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $room['id_room']; ?>" onclick="detail(<?= $room['id_room']; ?>,'<?= $room['name_room']; ?>','<?= $room['image']; ?>','<?= $room['description']; ?>','<?= $room['total_room']; ?>','<?= $room['price']; ?>')"><img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
+                                <a href="<?= BASEURL; ?>/manageroom/updateRoom/<?= $room['id_room'] ?>" class="btn shadow-none btn-warning showModalUpdate" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $room['id_room']; ?>" onclick="detail(<?= $room['id_room']; ?>,'<?= $room['name_room']; ?>','<?= $room['image']; ?>','<?= $room['description']; ?>','<?= $room['total_room']; ?>','<?= $room['price']; ?>','<?= BASEURL; ?>/images/images_rooms/<?= $room['image'] ?>')"><img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
                                 <a href="<?= BASEURL; ?>/manageroom/deleteRoom/<?= $room['id_room']; ?>" class="btn shadow-none btn-danger" data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png" alt="" srcset=""></a>
                             </td>
                         </tr>
@@ -228,7 +228,9 @@
                             <input type="text" class="form-control shadow-none" id="name_room" placeholder="name of room" name="name_room">
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="col-form-label">Image Room</label>
+                            <img style="width: 130px; height: 130px;" id="image_src">
+                            <br />
+                            <label for="image" class="col-form-label">Image Room (Kosongi jika tidak ingin mengganti)</label>
                             <input type="file" class="form-control shadow-none" id="image" name="image">
                         </div>
                         <div class="mb-3">
@@ -255,14 +257,24 @@
     </div>
 
     <script>
-        function detail(id_room, name_room, image, description, total_room, price) {
+        function detail(id_room, name_room, image, description, total_room, price, image_src) {
             document.getElementById("id_room").setAttribute("value", id_room);
             document.getElementById("name_room").setAttribute("value", name_room);
             document.getElementById("image").setAttribute("value", image);
             document.getElementById('descripti').innerHTML = description;
             document.getElementById("total_room").setAttribute("value", total_room);
             document.getElementById("price").setAttribute("value", price);
+            document.getElementById("image_src").setAttribute("src", image_src);
         }
+
+        // function check() {
+        //     let imageForm = document.getElementById("image_src").setAttribute("src", image_src);
+        //     let image = document.getElementById("image").setAttribute("value", image);
+
+        //     if (imageForm.value = null || imageTable.value != null) {
+        //         let img = document.
+        //     }
+        // }
 
         $('#update').click(function update() {
             let name_room = document.getElementById("name_room").value;
@@ -300,9 +312,9 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  -->
 </body>
 
 </html>
