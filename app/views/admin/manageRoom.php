@@ -190,7 +190,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Description</label>
-                            <textarea class="form-control shadow-none" id="message-text" placeholder="description" name="description"></textarea>
+                            <textarea class="form-control shadow-none" id="message-text description" placeholder="description" name="description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Total Room</label>
@@ -259,7 +259,7 @@
             document.getElementById("id_room").setAttribute("value", id_room);
             document.getElementById("name_room").setAttribute("value", name_room);
             document.getElementById("image").setAttribute("value", image);
-            document.getElementById("description").setAttribute("value", description);
+            document.getElementById('descripti').innerHTML = description;
             document.getElementById("total_room").setAttribute("value", total_room);
             document.getElementById("price").setAttribute("value", price);
         }
@@ -267,7 +267,7 @@
         $('#update').click(function update() {
             let name_room = document.getElementById("name_room").value;
             let image = document.getElementById("image").value;
-            let description = document.getElementById("description").value;
+            let description = document.getElementById("descripti").value;
             let total_room = document.getElementById("total_room").value;
             let price = document.getElementById("price").value;
             $.ajax({
