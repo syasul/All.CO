@@ -6,7 +6,8 @@
                 <div class="text-md-left text-center float-md-left mb-3 mt-3 mt-md-0 mb-md-0">
                     <label class="mr-2">Sort by:</label>
                     <div class="dropdown">
-                        <a class="btn dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Relevance
                         </a>
 
@@ -21,9 +22,9 @@
             <div class="row row-cols-1 row-cols-md-5 ">
                 <div class="col mb-3">
                     <div class="card h-100">
-                        <img src="./images/room-imahe.png" class="card-img-top" alt="...">
+                        <img src="./images/room-imahe.png" class="card-img-top" alt="..." style="width: 188px;">
 
-                        <div class="card-text" style="margin-top: 60%">
+                        <div class="card-text" style="margin-top:60%">
                             <div class=" row fw-bold fs-5 mb-1">
                                 <div class="name-room">Penthouse Suite</div>
                             </div>
@@ -31,7 +32,8 @@
                             <div class="fs-6 mb-3 desc-room">Lorem Ipsum is simply dummy text of the printing and
                                 typesetting industry.</div>
                             <div class="row d-flex justify-content-end">
-                                <a class="button-book btn col-5 text-white shadow-none" href="<?= BASEURL; ?>/room/detail">Book</a>
+                                <a class="button-book btn col-5 text-white shadow-none"
+                                    href="<?= BASEURL; ?>/room/detail">Book</a>
                             </div>
                         </div>
                     </div>

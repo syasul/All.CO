@@ -6,9 +6,6 @@ body {
     padding: 0;
     font-family: 'Poppins';
     scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
 }
 
 /* navbar */
@@ -69,11 +66,6 @@ body {
 
 /* content */
 
-.content {
-    margin-top: 3%;
-    flex: 1;
-}
-
 .content-room {
     min-height: 505px;
     padding-right: 0.35%;
@@ -86,7 +78,7 @@ body {
 }
 
 
-/* .searchs,
+.searchs,
 .searchs:hover,
 .searchs:active {
     color: white;
@@ -95,15 +87,6 @@ body {
     height: 30px;
     margin-left: 6px;
 
-} */
-
-/* .dropdown-menu li a {
-    color: #f0f0f0;
-
-} */
-
-.dropdown {
-    display: inline-block;
 }
 
 button img {
@@ -113,14 +96,15 @@ button img {
 
 
 .card {
+
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    padding: 5% 4% 5.5% 4%;
+    padding: 4%;
 }
 
 .card img {
     border-radius: 15px;
-    height: 600px;
+    width: 300px;
     height: 115px;
 
 }
@@ -153,7 +137,7 @@ button img {
 .button-book {
     color: white;
     background-color: #06283D;
-    border-radius: 10px;
+    border-radius: 8px;
     margin-right: 4%;
 }
 
