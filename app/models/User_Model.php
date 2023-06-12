@@ -1,8 +1,5 @@
 <?php 
 
-
-
-
 class User_Model{
 
     private $table = 'tb_user';
