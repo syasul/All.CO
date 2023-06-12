@@ -56,7 +56,7 @@
                         <div class="text">Total Room</div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="jumlah">0</div>
+                        <div class="jumlah"><?= $data['countRoom']['total_room'] ?></div>
                     </div>
                 </div>
 

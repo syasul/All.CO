@@ -10,6 +10,7 @@ class ManageRoom extends Controller
         } else {
             $data['countUser'] = $this->model('User_Model')->jumlahUser();
             $data['room'] = $this->model('Room_Model')->getAllRoom();
+            $data['countRoom'] = $this->model('Room_Model')->jumlahRoom();
             $this->view('admin/manageRoom', $data);
         }
     }
