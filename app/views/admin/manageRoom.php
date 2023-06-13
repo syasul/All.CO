@@ -267,15 +267,6 @@
             document.getElementById("image_src").setAttribute("src", image_src);
         }
 
-        // function check() {
-        //     let imageForm = document.getElementById("image_src").setAttribute("src", image_src);
-        //     let image = document.getElementById("image").setAttribute("value", image);
-
-        //     if (imageForm.value = null || imageTable.value != null) {
-        //         let img = document.
-        //     }
-        // }
-
         $('#update').click(function update() {
             let name_room = document.getElementById("name_room").value;
             let image = document.getElementById("image").value;
