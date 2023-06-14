@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <a class="logout-button" href="<?= BASEURL ?>/login/logout" style="padding: 0.29% 1.8% 0.33% 1.8%">
-                    <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="" width="23px" height="23px">
+                    <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="" width="22px" height="22px">
                 </a>
             </div>
         </nav>

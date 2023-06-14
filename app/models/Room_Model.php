@@ -16,6 +16,14 @@ class Room_Model
     return $this->db->resultSet();
   }
 
+  public function getDataRoomById($id_room)
+  {
+    $this->db->query('SELECT * FROM ' . $this->table . " WHERE id_room=:id_room");
+    $this->db->bind('id_room', $id_room);
+
+    return $this->db->single();
+  }
+
 
   public function addDataRoom($data)
   {

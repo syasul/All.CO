@@ -64,29 +64,13 @@ body {
     text-decoration: none;
 }
 
+
 /* content */
 
-.content-room {
+/* .content-room {
     min-height: 505px;
     padding-right: 0.35%;
     padding-left: 0.35%;
-}
-
-
-.search {
-    border-radius: 10px;
-}
-
-
-.searchs,
-.searchs:hover,
-.searchs:active {
-    color: white;
-    background-color: #06283D;
-    border-radius: 10px;
-    height: 30px;
-    margin-left: 6px;
-
 }
 
 button img {
@@ -139,7 +123,7 @@ button img {
     background-color: #06283D;
     border-radius: 8px;
     margin-right: 4%;
-}
+} */
 
 
 /* footer */
