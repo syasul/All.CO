@@ -12,7 +12,7 @@
 
     <title>All.CO</title>
 
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="<?= BASEURL ?>/images/favicon.ico">
 </head>
 
 <body>

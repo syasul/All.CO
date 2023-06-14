@@ -28,9 +28,7 @@ class Room extends Controller
             $this->view('user/detail-room', $data);
             $this->view('templates/footer');
         } else {
-            $this->view('templates/header_guest');
-            $this->view('user/detail-room');
-            $this->view('templates/footer');
+            header('Location:' . BASEURL . '/Login');
         }
     }
 

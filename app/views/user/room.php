@@ -22,7 +22,7 @@
                 <?php foreach ($data['room'] as $room) : ?>
                     <div class="col mb-3">
                         <div class="card h-100">
-                            <img src="<?= BASEURL; ?>/images/images_rooms/<?= $room['image'] ?>" class="card-img-top" alt="..." style="width: 204px;">
+                            <img src="<?= BASEURL; ?>/images/images_rooms/<?= $room['image'] ?>" class="card-img-top" alt="..." style="width: 207px;">
 
                             <div class="card-text">
                                 <div class=" row fw-bold fs-5 mb-1">
