@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/manage-order.css">
@@ -20,13 +19,11 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">All.CO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageroom">Manage Room</a>
                     </li>
@@ -52,8 +49,7 @@
     <div class="content">
         <!-- data -->
         <div class="d-flex justify-content-between">
-            <button type="button" class=" button-data print" data-bs-whatever="@mdo"><img src="./images/print.png"
-                    alt=""> Print Order</button>
+            <button type="button" class=" button-data print" data-bs-whatever="@mdo"><img src="./images/print.png" alt=""> Print Order</button>
             <!-- <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#exampleModalAdd"
                 data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create Room</button> -->
 
@@ -63,13 +59,16 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col" class="text-center">No</th>
-                        <th scope="col" class="text-center">Name Customer</th>
+                        <th scope="col" class="text-center">Customer</th>
+                        <th scope="col" class="text-center">KTP</th>
                         <th scope="col" class="text-center">Rent</th>
                         <th scope="col" class="text-center">Check In</th>
                         <th scope="col" class="text-center">Check Out</th>
                         <th scope="col" class="text-center">Total Day</th>
+                        <th scope="col" class="text-center">Total_room Room</th>
                         <th scope="col" class="text-center">Total Price</th>
-                        <th scope="col" class="text-center">Penalty</th>
+                        <th scope="col" class="text-center">status</th>
+                        <th scope="col" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,9 +106,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

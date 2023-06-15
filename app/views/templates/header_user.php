@@ -40,9 +40,26 @@
 
                     </ul>
                 </div>
-                <a class="logout-button" href="<?= BASEURL ?>/login/logout" style="padding: 0.29% 1.8% 0.33% 1.8%">
-                    <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="" width="22px" height="22px">
-                </a>
-            </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Hi, Samsul
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="<?= BASEURL ?>/order">
+                                    <img src="<?= BASEURL ?>/images/order.png" alt="" srcset="" width="15px"
+                                        height="15px" margin-right="200px"> Order
+                                </a></a></li>
+                            <li>
+                                <a class="dropdown-item" href="<?= BASEURL ?>/login/logout">
+                                    <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="" width="15px"
+                                        height="15px" margin-right="200px"> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
         </nav>
     </header>

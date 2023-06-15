@@ -23,9 +23,9 @@
                 <div class="booking-side">
                     <form>
                         <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label">Nama</label>
+                            <label for="exampleInputEmail1" class="form-label">Total Room</label>
                             <input type="text" class="form-control shadow-none" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" value="Name" disabled>
+                                aria-describedby="emailHelp" placeholder="total room">
 
                         </div>
                         <div class="mb-2">
