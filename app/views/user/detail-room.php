@@ -1,57 +1,34 @@
-<!-- content -->
-<div class="content">
-    <link rel="stylesheet" href="<?= BASEURL; ?>/css/detail-room.css">
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="image-side">
-                <img src="<?= BASEURL; ?>/images/images_rooms/<?= $data['room']['image'] ?>" alt="" srcset="">
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="description-side">
-                <div class="description-side-text">
-                    <div class="text-header">
-                        <?= $data['room']['name_room'] ?>
-                    </div>
-                    <div class="text-price">Rp.
-                        <?= $data['room']['price'] ?>,- /Day
-                    </div>
-                    <div class="text-description">
-                        <?= $data['room']['description'] ?>
-                    </div>
-                </div>
-                <div class="booking-side">
-                    <form>
-                        <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label">Total Room</label>
-                            <input type="text" class="form-control shadow-none" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="total room">
-
-                        </div>
-                        <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label">Ktp</label>
-                            <input type="file" class="form-control shadow-none" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="ktp">
-
-                        </div>
-                        <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label">Check In</label>
-                            <input type="date" class="form-control shadow-none" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="mb-2">
-                            <label for="exampleInputEmail1" class="form-label">Check Out</label>
-                            <input type="date" class="form-control shadow-none" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-
-                        </div>
-
-
-                        <button tyoe>BOOK</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+<link rel="stylesheet" href="<?= BASEURL; ?>/css/detail-room.css">
+<div class="container mt-5 py-4">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div class="image-side">
+        <img src="<?= BASEURL; ?>/images/images_rooms/<?= $data['room']['image'] ?>" class="w-100">
+      </div>
     </div>
+    <div class="col-12 col-md-4">
+      <h2><?= $data['room']['name_room']; ?></h2>
+      <h4>Rp<?= $data['room']['price']; ?> / day</h4>
+      <p><?= nl2br($data['room']['description']); ?></p>
+      <form method="post" action="<?= BASEURL . '/order/order/' . $data['room']['id_room']; ?>" enctype="multipart/form-data">
+        <div class="mb-2">
+          <label for="total_room" class="form-label">Total Room</label>
+          <input type="number" class="form-control shadow-none" id="total_room" name="total_room" aria-describedby="emailHelp" placeholder="total room" required>
+        </div>
+        <div class="mb-2">
+          <label for="ktp" class="form-label">Ktp</label>
+          <input type="file" class="form-control shadow-none" id="ktp" name="ktp" aria-describedby="fileHelp" placeholder="ktp" required>
+        </div>
+        <div class="mb-2">
+          <label for="check_in" class="form-label">Check In</label>
+          <input type="date" class="form-control shadow-none" id="check_in" name="check_in" aria-describedby="dateHelp" required>
+        </div>
+        <div class="mb-2">
+          <label for="check_out" class="form-label">Check Out</label>
+          <input type="date" class="form-control shadow-none" id="check_out" name="check_out" aria-describedby="dateHelp" required>
+        </div>
+        <button type="submit" class="btn btn-primary">BOOK</button>
+      </form>
+    </div>
+  </div>
 </div>

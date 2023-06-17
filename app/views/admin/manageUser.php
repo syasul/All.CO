@@ -12,6 +12,7 @@
   <title>All.CO</title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/manageuser.css">
   <link rel="icon" type="image/x-icon" href="<?= BASEURL; ?>/images/favicon.ico">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
@@ -72,7 +73,9 @@
 
               <td class="text-center"><?= $user['role'] ?></td>
               <td class="text-center">
-                <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning showModalUpdate" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $user['id_user']; ?>" onclick="detail(<?= $user['id_user']; ?>,'<?= $user['username']; ?>','<?= $user['password']; ?>','<?= $user['role']; ?>')"><img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset=""></a>
+                <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning showModalUpdate enableButton" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $user['id_user']; ?>" onclick="detail(<?= $user['id_user']; ?>,'<?= $user['username']; ?>','<?= $user['password']; ?>','<?= $user['role']; ?>')">
+                  <img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset="">
+                </a>
                 <a href="<?= BASEURL; ?>/manageuser/deleteUser/<?= $user['id_user']; ?>" class="btn shadow-none btn-danger" data-bs-target="#exampleModalDelete"> <img class="modal-icon" src="<?= BASEURL; ?>/images/trash.png" alt="" srcset=""></a>
               </td>
             </tr>
@@ -180,7 +183,7 @@
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
