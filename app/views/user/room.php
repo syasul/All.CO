@@ -2,23 +2,8 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/room.css">
     <div class="content-room">
         <div class="p-5">
-            <div class="d-flex justify-content-end">
-                <div class="text-md-left text-center float-md-left mb-3 mt-3 mt-md-0 mb-md-0">
-                    <label class="mr-2">Sort by:</label>
-                    <div class="dropdown">
-                        <a class="btn dropdown-toggle shadow-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Relevance
-                        </a>
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Relevance</a></li>
-                            <li><a class="dropdown-item" href="#">Price Descending</a></li>
-                            <li><a class="dropdown-item" href="#">Price Ascending</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-5 ">
+            <div class="row row-cols-1 row-cols-md-5 mt-4">
                 <?php foreach ($data['room'] as $room) : ?>
                     <div class="col mb-3">
                         <div class="card h-100">

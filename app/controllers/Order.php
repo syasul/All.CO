@@ -6,7 +6,8 @@ class Order extends Controller
   {
     session_start();
     if (isset($_SESSION['id_user'])) {
-      $this->view('templates/header_user');
+      $data['user'] = $_SESSION['id_user']['username'];
+      $this->view('templates/header_user', $data);
       $this->view('user/order');
       $this->view('templates/footer');
     } else {

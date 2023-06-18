@@ -68,10 +68,16 @@
         <tbody>
           <?php foreach ($data['user'] as $index => $user) : ?>
             <tr>
-              <th scope="row" class="text-center"><?= $index + 1 ?></th>
-              <td class="text-center"><?= $user['username'] ?></td>
+              <th scope="row" class="text-center">
+                <?= $index + 1 ?>
+              </th>
+              <td class="text-center">
+                <?= $user['username'] ?>
+              </td>
 
-              <td class="text-center"><?= $user['role'] ?></td>
+              <td class="text-center">
+                <?= $user['role'] ?>
+              </td>
               <td class="text-center">
                 <a href="<?= BASEURL; ?>/manageuser/updateUser/<?= $user['id_user'] ?>" class="btn shadow-none btn-warning showModalUpdate enableButton" data-bs-toggle="modal" data-bs-target="#ModalUpdate" data-id="<?= $user['id_user']; ?>" onclick="detail(<?= $user['id_user']; ?>,'<?= $user['username']; ?>','<?= $user['password']; ?>','<?= $user['role']; ?>')">
                   <img class="modal-icon" src="<?= BASEURL; ?>/images/edit.png" alt="" srcset="">
@@ -192,35 +198,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-  <script>
-    function detail(id, username, password, role) {
-      document.getElementById("id_user").setAttribute("value", id);
-      document.getElementById("username").setAttribute("value", username);
-      document.getElementById("password").setAttribute("value", password);
-      document.getElementById(role + "1").setAttribute("selected", "selected");
-    }
-
-    function hapusselect(role) {
-      document.getElementById(role + "1").removeAttribute("selected", "selected");
-    }
-    $('#update').click(function update() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-      let role = document.getElementById("role").value;
-      $.ajax({
-        url: "<?= BASEURL; ?>/manageuser/updateUser",
-        data: {
-          username: username,
-          password: password,
-          role: role
-        },
-        method: 'POST',
-        success: function(data) {
-          console.log(data)
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

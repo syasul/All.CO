@@ -7,8 +7,9 @@ class Room extends Controller
     {
         session_start();
         if (isset($_SESSION['id_user'])) {
-            $this->view('templates/header_user');
+            $data['user'] = $_SESSION['id_user']['username'];
             $data['room'] = $this->model('Room_Model')->getAllRoom();
+            $this->view('templates/header_user', $data);
             $this->view('user/room', $data);
             $this->view('templates/footer');
         } else {
@@ -24,7 +25,8 @@ class Room extends Controller
         session_start();
         if (isset($_SESSION['id_user'])) {
             $data['room'] = $this->model('Room_Model')->getDataRoomById($id_room);
-            $this->view('templates/header_user');
+            $data['user'] = $_SESSION['id_user']['username'];
+            $this->view('templates/header_user', $data);
             $this->view('user/detail-room', $data);
             $this->view('templates/footer');
         } else {
