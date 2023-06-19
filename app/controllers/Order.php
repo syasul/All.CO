@@ -7,9 +7,10 @@ class Order extends Controller
     session_start();
     if (isset($_SESSION['id_user'])) {
       $data['user'] = $_SESSION['id_user']['username'];
-      $this->view('templates/header_user', $data);
-      $this->view('user/order');
-      $this->view('templates/footer');
+      $data['Order'] = $this->model('Order_Model')->getAllOrderUser($_SESSION['id_user']['id_user']);
+      $this->view('templates/header_user');
+      $this->view('user/order', $data);
+      $this->view('templates/footer_backup');
     } else {
       header('Location: ' . BASEURL . '/login');
     }
@@ -58,7 +59,7 @@ class Order extends Controller
     $this->model('Log_Model')->addLog($log);
     $last = $this->model('Order_Model')->addDataOrder($data);
 
-    move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_ktp/' . $last . '.png');
+    move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/All/public/images/images_ktp/' . $last . '.png');
 
     header('Location:' . BASEURL . '/room/detail/' . $id_room);
   }

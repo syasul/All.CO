@@ -14,7 +14,7 @@ class ManageOrder extends Controller
   {
     $data['order'] = $this->model('Order_Model')->getAllOrder();
     $this->view('admin/manageOrder', $data);
-    $this->view('templates/footer');
+    $this->view('templates/footer_backup');
   }
 
   public function approve($id_order = null)

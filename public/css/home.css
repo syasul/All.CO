@@ -107,21 +107,23 @@ body {
 .content .jumbotron p {
     font-size: 14px;
     font-weight: 500;
+    margin-bottom: 3%;
 }
 
-.content .jumbotron button {
+.content .jumbotron a {
     background-color: #1E1E1E;
     border: none;
     border-radius: 35px;
-    margin-top: 40px;
     padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 500;
     color: #fff;
 }
 
 /* desc */
 .content-desc {
     overflow: hidden;
-    margin-top: 12%;
+    margin-top: 16%;
     margin-bottom: 3%;
 }
 

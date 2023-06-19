@@ -17,36 +17,34 @@
 
 <body>
   <!-- navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">All.CO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageroom">Manage Room</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageuser">Manage User</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageorder">Manage Order</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/log">Log Data</a>
-            </li>
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">All.CO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageroom">Manage Room</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageuser">Manage User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/manageorder">Manage Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= BASEURL; ?>/log">Log Data</a>
+          </li>
 
-          </ul>
-        </div>
-        <a class="login-button" href="<?= BASEURL; ?>/login/logout">
-          <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="">
-        </a>
+        </ul>
       </div>
-    </nav>
-  </header>
+      <a class="login-button" href="<?= BASEURL; ?>/login/logout">
+        <img src="<?= BASEURL ?>/images/logout.png" alt="" srcset="">
+      </a>
+    </div>
+  </nav>
 
   <div class="content">
     <div class="d-flex justify-content-end">
@@ -94,20 +92,19 @@
 
 
   <!-- footer -->
-  <footer>
-    <div class="foot">
-      <div class="row">
-        <div class="col-sm-11">All.CO</div>
-        <div class="col-sm-1">
-          <div class="row d-flex justify-content-end">
-            <div class="col-4"><img src="./images/facebook.png" alt=""></div>
-            <div class="col-4"><img src="./images/instagram.png" alt=""></div>
-            <div class="col-4"><img src="./images/twitter.png" alt=""></div>
-          </div>
+  <div class="foot ">
+    <div class="row">
+      <div class="col-sm-11">All.CO</div>
+      <div class="col-sm-1">
+        <div class="row d-flex justify-content-end">
+          <div class="col-4"><img src="./images/facebook.png" alt=""></div>
+          <div class="col-4"><img src="./images/instagram.png" alt=""></div>
+          <div class="col-4"><img src="./images/twitter.png" alt=""></div>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+
   <!-- modal add -->
   <div class="modal fade" id="ModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -184,6 +181,7 @@
 
 
   <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateUser.js"></script>
+  <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/fixed-top-nav.js"></script>
 
   <!-- Optional JavaScript; choose one of the two! -->
 

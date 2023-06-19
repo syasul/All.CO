@@ -4,16 +4,18 @@ html,
 body {
     margin: 0;
     padding: 0;
+    height: auto;
     font-family: 'Poppins';
     scroll-behavior: smooth;
 }
 
 /* navbar */
 .navbar {
+    top: 0;
     height: 50px;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    position: sticky;
+    position: fixed;
     background-color: white;
 }
 
@@ -99,9 +101,7 @@ body {
 
 /* footer */
 .foot {
-    position: absolute;
     width: 100%;
-    bottom: 0;
     overflow: hidden;
     background-color: #1E1E1E;
     padding: 1% 3.7% 1% 3.1%;

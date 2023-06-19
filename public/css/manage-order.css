@@ -4,6 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    min-height: auto;
     font-family: 'Poppins';
     scroll-behavior: smooth;
 }
@@ -13,7 +14,8 @@ body {
     height: 50px;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    position: sticky;
+    position: fixed;
+    top: 0;
     background-color: white;
 }
 

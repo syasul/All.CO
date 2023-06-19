@@ -46,11 +46,11 @@
   </nav>
 
 
-  <div class="content">
+  <div class="content" style="margin-top: 5%">
     <!-- data -->
     <div>
-      <a class="btn btn-primary" href="<?= BASEURL . '/manageOrder/export'; ?>">Export Order</a>
-      <button type="button" class=" button-data print" data-bs-whatever="@mdo"><img src="./images/print.png" alt=""> Print Order</button>
+      <a class="btn button-data print" href="<?= BASEURL . '/manageOrder/export'; ?>">Export Order</a>
+
       <!-- <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#exampleModalAdd"
         data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create Room</button> -->
     </div>

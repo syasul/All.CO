@@ -54,7 +54,7 @@
   <div class="content">
     <!-- total customer dan ruangan -->
     <div class="row d-flex justify-content-center">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="row">
           <div class="col-sm-6">
             <div class="text">Total Room</div>
@@ -65,7 +65,7 @@
         </div>
 
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <div class="row">
           <div class="col-sm-6">
             <div class="text">Total Customer</div>
@@ -79,24 +79,15 @@
         </div>
 
       </div>
-      <div class="col-sm-3">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="text">Kamar Terbooking</div>
-          </div>
-          <div class="col-sm-6">
-            <div class="jumlah">0</div>
-          </div>
-        </div>
 
-      </div>
-      <div class="col-sm-3">
+
+      <div class="col-sm-4">
         <div class="row">
           <div class="col-sm-6">
-            <div class="text">Total Penyewaan</div>
+            <div class="text">Room Reserved</div>
           </div>
           <div class="col-sm-6">
-            <div class="jumlah">0</div>
+            <div class="jumlah"><?= $data['countRoomReserved']['total_room_reserved'] ?></div>
           </div>
         </div>
 
@@ -104,8 +95,7 @@
     </div>
 
     <!-- data -->
-    <div class="d-flex justify-content-between">
-      <button type="button" class=" button-data print" data-bs-whatever="@mdo"><img src="./images/print.png" alt=""> Print Room</button>
+    <div class="d-flex justify-content-end">
       <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#exampleModalAdd" data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create Room</button>
 
     </div>
@@ -117,7 +107,7 @@
             <th scope="col" class="text-center">No</th>
             <th scope="col" class="text-center">Name Room</th>
             <th scope="col" class="text-center">image</th>
-            <th scope="col" class="text-center">Description</th>
+            <th scope="col" class="text-center" style="width:300px">Description</th>
             <th scope="col" class="text-center">Total Rooms</th>
             <th scope="col" class="text-center">Price</th>
             <th scope="col" class="text-center">Action</th>
@@ -132,7 +122,8 @@
               <td class="text-center">
                 <?= $room['name_room'] ?>
               </td>
-              <td class="text-center"><img style="width: 130px; height: 130px;" src="<?= BASEURL; ?>/images/images_rooms/<?= $room['image'] ?>">
+              <td class="text-center">
+                <img style="width: 130px; height: 130px;" src="<?= BASEURL; ?>/images/images_rooms/<?= $room['image'] ?>">
 
               </td>
               <td class="text-center">
@@ -262,7 +253,45 @@
     </div>
   </div>
 
-  <script language="JavaScript" type="text/javascript" src="<?= BASEURL; ?>/js/updateRoom.js"></script>
+  <script>
+    function detail(id_room, name_room, image, description, total_room, price, image_src) {
+      document.getElementById("id_room").setAttribute("value", id_room);
+      document.getElementById("name_room").setAttribute("value", name_room);
+      document.getElementById("image").setAttribute("value", image);
+      document.getElementById('descripti').innerHTML = description.replace('<br />', '\n');
+      document.getElementById("total_room").setAttribute("value", total_room);
+      document.getElementById("price").setAttribute("value", price);
+      document.getElementById("image_src").setAttribute("src", image_src);
+    }
+
+    $('#update').click(function update() {
+      let name_room = document.getElementById("name_room").value;
+      let image = document.getElementById("image").value;
+      let description = document.getElementById("descripti").value;
+      let total_room = document.getElementById("total_room").value;
+      let price = document.getElementById("price").value;
+      $.ajax({
+        url: "<?= BASEURL; ?>/manageroom/updateRoom",
+        data: {
+          name_room: name_room,
+          image: image,
+          description: description,
+          total_room: total_room,
+          price: price
+        },
+        method: 'POST',
+        success: function(data) {
+          console.log(data)
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 

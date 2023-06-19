@@ -11,12 +11,12 @@ class Room extends Controller
             $data['room'] = $this->model('Room_Model')->getAllRoom();
             $this->view('templates/header_user', $data);
             $this->view('user/room', $data);
-            $this->view('templates/footer');
+            $this->view('templates/footer_backup');
         } else {
             $this->view('templates/header_guest');
             $data['room'] = $this->model('Room_Model')->getAllRoom();
             $this->view('user/room', $data);
-            $this->view('templates/footer');
+            $this->view('templates/footer_backup');
         }
     }
 

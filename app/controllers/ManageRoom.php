@@ -9,6 +9,7 @@ class ManageRoom extends Controller
             header('Location:' . BASEURL . '/');
         } else {
             $data['countUser'] = $this->model('User_Model')->jumlahUser();
+            $data['countRoomReserved'] = $this->model('Order_Model')->jumlahRoomReserved();
             $data['room'] = $this->model('Room_Model')->getAllRoom();
             $data['countRoom'] = $this->model('Room_Model')->jumlahRoom();
             $this->view('admin/manageRoom', $data);

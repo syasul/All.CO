@@ -14,7 +14,7 @@
                                     <div class="name-room"><?= $room['name_room'] ?></div>
                                 </div>
                                 <div class="fs-6 mb-1  desc-room harga">Rp. <?= $room['price'] ?>,- /Day</div>
-                                <div class="fs-6 mb-3 desc-room"><?= $room['description'] ?></div>
+                                <div class="fs-6 mb-3 desc-room" style="text-overflow: ellipsis; white-space: nowrap;  overflow:hidden;"><?= $room['description'] ?></div>
                                 <div class="row d-flex justify-content-end">
                                     <a class="button-book btn col-5 text-white shadow-none" href="<?= BASEURL; ?>/room/detail/<?= $room['id_room'] ?>">Book</a>
                                 </div>

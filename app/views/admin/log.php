@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>All.CO</title>
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/log-data.css">
@@ -20,13 +19,11 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">All.CO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/manageroom">Manage Room</a>
                     </li>
@@ -52,7 +49,7 @@
     <div class="content">
 
 
-        <div class="table-room">
+        <div class="table-room" style="margin-top:3%;">
             <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -62,12 +59,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($data['log'] as $log  ) : ?>
-                    <tr>
-                        <th scope="row" class="text-center"><?= $log['date_log']; ?></th>
-                        <td class="text-center"><?= $log['log_data']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
+                    <?php foreach ($data['log'] as $log) : ?>
+                        <tr>
+                            <th scope="row" class="text-center"><?= $log['date_log']; ?></th>
+                            <td class="text-center"><?= $log['log_data']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -97,15 +94,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Create Room</h5>
-                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Name Room :</label>
-                            <input type="text" class="form-control shadow-none" id="recipient-name"
-                                placeholder="name room">
+                            <input type="text" class="form-control shadow-none" id="recipient-name" placeholder="name room">
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Picture Room :</label>
@@ -113,8 +108,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Description :</label>
-                            <textarea class="form-control shadow-none" id="message-text"
-                                placeholder="description"></textarea>
+                            <textarea class="form-control shadow-none" id="message-text" placeholder="description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Price :</label>
@@ -122,8 +116,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="price" class="col-form-label">Status :</label>
-                            <select class="form-select shadow-none  " id="inputimage"
-                                aria-label="Default select example" name="status">
+                            <select class="form-select shadow-none  " id="inputimage" aria-label="Default select example" name="status">
                                 <option value="Available">Available</option>
                                 <option value="Not Available">Not Available</option>
                             </select>
@@ -139,14 +132,12 @@
     </div>
 
     <!-- modal update -->
-    <div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Update Room</h5>
-                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -168,8 +159,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="price" class="col-form-label">Status :</label>
-                            <select class="form-select shadow-none  " id="inputimage"
-                                aria-label="Default select example" name="status">
+                            <select class="form-select shadow-none  " id="inputimage" aria-label="Default select example" name="status">
                                 <option value="Available">Available</option>
                                 <option value="Not Available">Not Available</option>
                             </select>
@@ -192,9 +182,7 @@
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
