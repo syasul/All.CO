@@ -21,7 +21,7 @@ class ManageRoom extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name_room = $_POST['name_room'];
             $image = $_FILES['image']['name'];
-            $description = $_POST['description'];
+            $description = str_replace("'", " ", $_POST['description']);
             $total_room = $_POST['total_room'];
             $price = $_POST['price'];
 
@@ -48,7 +48,7 @@ class ManageRoom extends Controller
         $id_room = $_POST['id_room'];
         $name_room = $_POST['name_room'];
         $image = $_FILES['image']['name'];
-        $description = $_POST['description'];
+        $description = str_replace("'", " ", $_POST['description']);
         $total_room = $_POST['total_room'];
         $price = $_POST['price'];
 
