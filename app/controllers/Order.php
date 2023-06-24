@@ -59,7 +59,7 @@ class Order extends Controller
     $this->model('Log_Model')->addLog($log);
     $last = $this->model('Order_Model')->addDataOrder($data);
 
-    move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_rooms/{$image}' . $last . '.png');
+    move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_ktp/{$image}' . $last . '.png');
 
     header('Location:' . BASEURL . '/room/detail/' . $id_room);
   }

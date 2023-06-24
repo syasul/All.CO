@@ -80,6 +80,11 @@ body {
     margin-bottom: 2%;
 }
 
+.button-data:hover {
+    color: #FFF8EA;
+}
+
+
 .add {
     width: 12%;
 }
@@ -88,11 +93,6 @@ body {
     width: 11%;
 }
 
-.button-data img {
-    width: 20px;
-    height: 20px;
-    margin-right: 2%;
-}
 
 
 /* table */

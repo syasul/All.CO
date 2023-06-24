@@ -49,7 +49,7 @@
   <div class="content" style="margin-top: 5%">
     <!-- data -->
     <div>
-      <a class="btn button-data print" href="<?= BASEURL . '/manageOrder/export'; ?>">Export Order</a>
+      <a class="btn button-data print shadow-none" href="<?= BASEURL . '/manageOrder/export'; ?>">Export Order</a>
 
       <!-- <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#exampleModalAdd"
         data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create Room</button> -->
@@ -60,13 +60,13 @@
           <tr>
             <th scope="col" class="text-center">No.</th>
             <th scope="col" class="text-center">username</th>
-            <th scope="col" class="text-center">ktp</th>
-            <th scope="col" class="text-center">name_room</th>
-            <th scope="col" class="text-center">total_room</th>
-            <th scope="col" class="text-center">check_in</th>
-            <th scope="col" class="text-center">check_out</th>
-            <th scope="col" class="text-center">total_day</th>
-            <th scope="col" class="text-center">total_price</th>
+            <th scope="col" class="text-center" style="width: 80px">ktp</th>
+            <th scope="col" class="text-center">name room</th>
+            <th scope="col" class="text-center">total room</th>
+            <th scope="col" class="text-center">check in</th>
+            <th scope="col" class="text-center">check out</th>
+            <th scope="col" class="text-center">total day</th>
+            <th scope="col" class="text-center">total price</th>
             <th scope="col" class="text-center">status</th>
             <th scope="col" class="text-center">action</th>
           </tr>
@@ -78,22 +78,22 @@
             $r = $this->model('Room_Model')->getDataRoomById($row['id_room']); ?>
             <tr>
               <th scope="row" class="text-center"><?= $no++; ?></th>
-              <td><?= $u['username']; ?></td>
-              <td><img src="<?= BASEURL . '/images/images_ktp/' . $row['id_order'] . '.png'; ?>" class="w-100" alt=""></td>
-              <td><?= $r['name_room']; ?></td>
-              <td><?= $row['total_room']; ?></td>
-              <td nowrap><?= $row['check_in']; ?></td>
-              <td nowrap><?= $row['check_out']; ?></td>
-              <td><?= $row['total_day']; ?></td>
-              <td><?= $row['total_price']; ?></td>
-              <td>
+              <td class="text-center"><?= $u['username']; ?></td>
+              <td class="text-center"><img src="<?= BASEURL . '/images/images_ktp/' . $row['id_order'] . '.png'; ?>" class="w-100" alt="" style="width: 40px"></td>
+              <td class="text-center"><?= $r['name_room']; ?></td>
+              <td class="text-center"><?= $row['total_room']; ?></td>
+              <td class="text-center" nowrap><?= $row['check_in']; ?></td>
+              <td class="text-center" nowrap><?= $row['check_out']; ?></td>
+              <td class="text-center"><?= $row['total_day']; ?></td>
+              <td class="text-center">Rp. <?= $row['total_price']; ?></td>
+              <td class="text-center">
                 <?php if (0 == $row['status']) { ?>
                   <span class="badge bg-secondary">Pending</span>
                 <?php } else { ?>
                   <span class="badge bg-success">Approved</span>
                 <?php } ?>
               </td>
-              <td nowrap>
+              <td td class="text-center" nowrap>
                 <?php if (0 == $row['status']) { ?>
                   <a class="btn btn-sm btn-primary" href="<?= BASEURL . '/manageOrder/approve/' . $row['id_order']; ?>">Approve</a>
                 <?php } ?>

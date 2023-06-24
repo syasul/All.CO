@@ -39,6 +39,17 @@ class ManageRoom extends Controller
 
             $this->model('Room_Model')->addDataRoom($data);
 
+            session_start();
+            $admin = $_SESSION['id_user']["username"];
+
+
+            $log = [
+                'date_log' => date("Y-m-d H:i:s"),
+                'log_data' => $admin . " menambahkan data room : " . "{" . $name_room . ", " . $tmpFile . ", " . $description . ", " . $total_room . ", " . $price . "}"
+            ];
+
+            $this->model('Log_Model')->addLog($log);
+
             header('Location:' . BASEURL . '/manageroom');
         }
     }
@@ -69,19 +80,16 @@ class ManageRoom extends Controller
         //print_r($data);die;
 
         // log
-        // session_start();
-        // $admin = $_SESSION['id_user']["username"];
+        session_start();
+        $admin = $_SESSION['id_user']["username"];
 
 
-        // $log = [
-        //     'date_log' => date("Y-m-d H:i:s"),
-        //     'log_data' => $admin ." update data user : " . "{" . $username . ", " . $password .", " . $role . "}" 
-        // ];
+        $log = [
+            'date_log' => date("Y-m-d H:i:s"),
+            'log_data' => $admin . " update data room : " . "{" . $name_room . "}"
+        ];
 
-        // $this->model('Log_Model')->addLog($log);
-
-
-
+        $this->model('Log_Model')->addLog($log);
 
         header('Location:' . BASEURL . '/manageroom');
 
@@ -94,16 +102,16 @@ class ManageRoom extends Controller
         if ($this->model('Room_Model')->hapusDataRoom($id_room) > 0) {
 
             header('Location:' . BASEURL . '/manageroom');
-            // session_start();
-            // $admin = $_SESSION['id_user']["username"];
+            session_start();
+            $admin = $_SESSION['id_user']["username"];
 
 
-            // $log = [
-            //     'date_log' => date("Y-m-d H:i:s"),
-            //     'log_data' => $admin ." menghapus data user "
-            // ];
+            $log = [
+                'date_log' => date("Y-m-d H:i:s"),
+                'log_data' => $admin . " menghapus data Room "
+            ];
 
-            // $this->model('Log_Model')->addLog($log);
+            $this->model('Log_Model')->addLog($log);
             exit;
         } else {
             header('Location:' . BASEURL . '/manageroom');

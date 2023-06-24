@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <div class="image-side">
-        <img src="<?= BASEURL; ?>/images/images_rooms/<?= $data['room']['image'] ?>" class="w-100">
+        <img src="<?= BASEURL; ?>/images/images_rooms/<?= $data['room']['image'] ?>" class="w-100" style="border-radius: 20px">
       </div>
     </div>
     <div class="col-12 col-md-4">
@@ -27,7 +27,7 @@
           <label for="check_out" class="form-label">Check Out</label>
           <input type="date" class="form-control shadow-none" id="check_out" name="check_out" aria-describedby="dateHelp" required>
         </div>
-        <button type="submit" class="btn btn-primary">BOOK</button>
+        <button type="submit" class="btn btn-primary shadow-none">BOOK</button>
       </form>
     </div>
   </div>

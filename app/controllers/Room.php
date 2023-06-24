@@ -28,7 +28,7 @@ class Room extends Controller
             $data['user'] = $_SESSION['id_user']['username'];
             $this->view('templates/header_user', $data);
             $this->view('user/detail-room', $data);
-            $this->view('templates/footer');
+            $this->view('templates/footer_backup');
         } else {
             header('Location:' . BASEURL . '/Login');
         }
