@@ -50,6 +50,11 @@
     </div>
   </nav>
 
+  <div class="row flash" style="margin-top: 50px;">
+    <div class="col-sm-12">
+      <?php Flasher::flash(); ?>
+    </div>
+  </div>
 
   <div class="content">
     <!-- total customer dan ruangan -->

@@ -52,6 +52,23 @@ body {
     color: #191919;
 }
 
+.dropdown a {
+    color: #191919;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    color: #191919;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown a:active {
+    color: #191919;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .container-fluid .login-button {
     margin-left: 20px;
     border: 1.5px #191919 solid;
@@ -77,8 +94,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
-
-.content {}
 
 header h1 {
     font-size: 32px;

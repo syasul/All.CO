@@ -49,6 +49,11 @@ class ManageRoom extends Controller
             ];
 
             $this->model('Log_Model')->addLog($log);
+            Flasher::setFlash('Data Room', 'berhasil', 'ditambahkan', 'success');
+
+            header('Location:' . BASEURL . '/manageroom');
+        } else {
+            Flasher::setFlash('Data Room', 'gagal', 'ditambahkan', 'danger');
 
             header('Location:' . BASEURL . '/manageroom');
         }
@@ -90,7 +95,7 @@ class ManageRoom extends Controller
         ];
 
         $this->model('Log_Model')->addLog($log);
-
+        Flasher::setFlash('Data Room', 'berhasil', 'diubah', 'success');
         header('Location:' . BASEURL . '/manageroom');
 
         // }
@@ -112,8 +117,10 @@ class ManageRoom extends Controller
             ];
 
             $this->model('Log_Model')->addLog($log);
+            Flasher::setFlash('Data Room', 'berhasil', 'dihapus', 'success');
             exit;
         } else {
+            Flasher::setFlash('Data Room', 'gagal', 'dihapus', 'danger');
             header('Location:' . BASEURL . '/manageroom');
             exit;
         }

@@ -1,14 +1,17 @@
-<?php 
+<?php
 
 
-class Register extends Controller{
-    public function index(){
+class Register extends Controller
+{
+    public function index()
+    {
         $this->view('user/register');
     }
 
-    public function register(){
+    public function register()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+
             $username = $_POST['username'];
             $password = $_POST['password'];
 
@@ -20,7 +23,7 @@ class Register extends Controller{
                     'username' => $username,
                     'password' => password_hash($password, PASSWORD_DEFAULT)
                 ];
-                    // Cek kecocokan username dan password
+                // Cek kecocokan username dan password
                 $this->model('User_Model')->register($data);
 
                 //login otomatis
@@ -28,15 +31,16 @@ class Register extends Controller{
                 $user = $this->model('User_Model')->login($data);
 
                 session_start();
-                
+
                 $_SESSION['id_user'] = $user;
                 if ($user['role'] === 'customer') {
-                    header('Location:'. BASEURL . '/Home');
-                } 
+                    header('Location:' . BASEURL . '/Home');
+                }
                 exit;
+            } else {
+                Flasher::setFlash(' ', 'username / password', 'tidak boleh kosong', 'warning');
+                header('Location:' . BASEURL . '/register');
             }
-        }    
+        }
     }
 }
-
-?>

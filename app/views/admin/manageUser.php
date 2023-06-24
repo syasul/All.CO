@@ -46,6 +46,12 @@
     </div>
   </nav>
 
+  <div class="row flash" style="margin-top: 50px;">
+    <div class="col-sm-12">
+      <?php Flasher::flash(); ?>
+    </div>
+  </div>
+
   <div class="content">
     <div class="d-flex justify-content-end">
       <button type="button" class=" button-data add" data-bs-toggle="modal" data-bs-target="#ModalAdd" data-bs-whatever="@mdo"><img src="./images/add-data.png" alt=""> Create User</button>

@@ -60,7 +60,7 @@ class Order extends Controller
     $last = $this->model('Order_Model')->addDataOrder($data);
 
     move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_ktp/{$image}' . $last . '.png');
-
-    header('Location:' . BASEURL . '/room/detail/' . $id_room);
+    Flasher::setFlash('Pesanan anda', 'berhasil', 'dibuat', 'success');
+    header('Location:' . BASEURL . '/Order');
   }
 }

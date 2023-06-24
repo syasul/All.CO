@@ -50,6 +50,29 @@ body {
     color: #191919;
 }
 
+.dropdown a {
+    color: #191919;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    color: #191919;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown a:active {
+    color: #191919;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.dropdown a::on {
+    color: #191919;
+    background-color: transparent;
+    text-decoration: none;
+}
+
 .container-fluid .login-button {
     margin-left: 20px;
     border: 1.5px #191919 solid;

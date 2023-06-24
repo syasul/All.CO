@@ -33,15 +33,4 @@ class Room extends Controller
             header('Location:' . BASEURL . '/Login');
         }
     }
-
-
-    // public function permissionBook(){
-    //     session_start();
-    //     if (isset($_SESSION['id_user'])) {
-    //         echo 'permission Ok';
-    //     } else {
-    //        header('Location:' . BASEURL .'/login');
-
-    //    }
-    // }
 }

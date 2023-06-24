@@ -7,6 +7,7 @@ body {
     height: 100vh;
     font-family: 'Poppins';
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -54,33 +55,31 @@ body {
     color: #191919;
 }
 
-.container-fluid .login-button {
-    margin-left: 20px;
-    border: 1.5px #191919 solid;
-    padding-left: 1.8%;
-    padding-right: 1.8%;
-    padding-top: 0.29%;
-    padding-bottom: 0.33%;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 600;
+.dropdown a {
     color: #191919;
     text-decoration: none;
 }
+
+.dropdown a:hover {
+    color: #191919;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown a:active {
+    color: #191919;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
 
 /* content */
 .content {
     padding: 3% 0;
 }
 
-.content-list {
-    display: flex;
-    margin: auto;
-    padding: 2%;
-    width: 90%;
-    height: 20%;
-    background-color: red;
-}
+
 
 
 
