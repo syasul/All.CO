@@ -32,11 +32,12 @@ class Order_Model
   public function addDataOrder($data)
   {
     // $query = "INSERT INTO tb_order VALUES ('', :id_user, :id_room, :total_room, :check_in, :check_out, :total_day, :total_price, 0";
-    $query = "INSERT INTO `tb_order` SET `id_user` = :id_user, `id_room` = :id_room, `total_room` = :total_room, `check_in` = :check_in, `check_out` = :check_out, `total_day` = :total_day, `total_price` = :total_price, `status` = 0";
+    $query = "INSERT INTO `tb_order` SET `id_user` = :id_user, `id_room` = :id_room, `ktp` = :ktp  , `total_room` = :total_room, `check_in` = :check_in, `check_out` = :check_out, `total_day` = :total_day, `total_price` = :total_price, `status` = 0";
 
     $this->db->query($query);
     $this->db->bind(':id_user', $data['id_user']);
     $this->db->bind(':id_room', $data['id_room']);
+    $this->db->bind(':ktp', $data['ktp']);
     $this->db->bind(':total_room', $data['total_room']);
     $this->db->bind(':check_in', $data['check_in']);
     $this->db->bind(':check_out', $data['check_out']);

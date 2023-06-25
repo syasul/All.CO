@@ -34,15 +34,18 @@ class Order extends Controller
     $id_user = $user['id_user'];
     $username = $user['username'];
     $total_room = $_POST['total_room'];
+    $ktp = $_FILES['ktp']['name'];
     $check_in = $_POST['check_in'];
     $check_out = $_POST['check_out'];
     $total_day = round((strtotime($check_out) - strtotime($check_in)) / (60 * 60 * 24)) + 1;
     $total_price = $room['price'] * $total_room * $total_day;
     $status = 0;
 
+
     $data = [
       'id_user' => $id_user,
       'id_room' => $id_room,
+      'ktp' => $ktp,
       'total_room' => $total_room,
       'check_in' => $check_in,
       'check_out' => $check_out,
@@ -57,9 +60,12 @@ class Order extends Controller
     ];
 
     $this->model('Log_Model')->addLog($log);
-    $last = $this->model('Order_Model')->addDataOrder($data);
 
-    move_uploaded_file($_FILES['ktp']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_ktp/{$image}' . $last . '.png');
+    $tmpFile =  $_FILES['ktp']['tmp_name'];
+    $this->model('Order_Model')->addDataOrder($data);
+    move_uploaded_file($tmpFile, $_SERVER['DOCUMENT_ROOT'] . '/ALL.CO/public/images/images_ktp/{$image}');
+
+
     Flasher::setFlash('Pesanan anda', 'berhasil', 'dibuat', 'success');
     header('Location:' . BASEURL . '/Order');
   }
