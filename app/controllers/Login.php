@@ -5,12 +5,13 @@ class Login extends Controller
 {
   public function index()
   {
-    $this->view('user/login', $data = []);
+    session_start();
+    $this->view('user/login');
   }
 
   public function login()
   {
-
+    session_start();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $username = $_POST['username'];
       $password = $_POST['password'];
@@ -32,7 +33,6 @@ class Login extends Controller
 
           // Login berhasil, simpan informasi pengguna ke sesi atau cookie
 
-          session_start();
 
           $_SESSION['id_user'] = $user;
 

@@ -20,5 +20,6 @@ class Flasher
             <button type="button" class="btn-close shadow-none" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
         }
+        unset($_SESSION['flash']);
     }
 }

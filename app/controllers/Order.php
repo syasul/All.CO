@@ -40,6 +40,8 @@ class Order extends Controller
     $total_day = round((strtotime($check_out) - strtotime($check_in)) / (60 * 60 * 24)) + 1;
     $total_price = $room['price'] * $total_room * $total_day;
     $status = 0;
+    $tmpFile =  $_FILES['ktp']['tmp_name'];
+    move_uploaded_file($tmpFile, $_SERVER['DOCUMENT_ROOT'] . "/ALL.CO/public/images/images_ktp/{$ktp}");
 
 
     $data = [

@@ -79,7 +79,7 @@
             <tr>
               <th scope="row" class="text-center"><?= $no++; ?></th>
               <td class="text-center"><?= $u['username']; ?></td>
-              <td class="text-center"><img src="<?= BASEURL . '/images/images_ktp/' . $row['id_order'] . '.png'; ?>" class="w-100" alt="" style="width: 40px"></td>
+              <td class="text-center"><img src="<?= BASEURL . '/images/images_ktp/' . $row['ktp']; ?>" class="w-100" alt="" style="width: 40px"></td>
               <td class="text-center"><?= $r['name_room']; ?></td>
               <td class="text-center"><?= $row['total_room']; ?></td>
               <td class="text-center" nowrap><?= $row['check_in']; ?></td>
