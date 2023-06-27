@@ -29,10 +29,7 @@ class Login extends Controller
 
         if ($user && password_verify($password, $data['password'])) {
 
-          echo "Error : if 3";
-
           // Login berhasil, simpan informasi pengguna ke sesi atau cookie
-
 
           $_SESSION['id_user'] = $user;
 
